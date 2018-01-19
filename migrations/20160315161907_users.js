@@ -9,6 +9,16 @@ exports.up = function(knex, Promise) {
       table.dateTime('passwordResetExpires');
       table.string('gender');
       table.string('location');
+
+      // entreprise ou maitre d'ouvrage
+      table.string('type');
+
+      // entrprise
+      table.string('forme_juridique');
+      table.string('gerant');
+      table.string('coords');
+      table.string('siret');
+
       table.string('website');
       table.string('picture');
       table.string('facebook');

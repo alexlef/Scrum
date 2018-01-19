@@ -78,6 +78,7 @@ exports.signupGet = function(req, res) {
  * POST /signup
  */
 exports.signupPost = function(req, res, next) {
+  console.log(req.body); // TODO marche pas encore
   req.assert('name', 'Name cannot be blank').notEmpty();
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('email', 'Email cannot be blank').notEmpty();
@@ -94,7 +95,11 @@ exports.signupPost = function(req, res, next) {
   new User({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    forme_juridique: req.body.forme_juridique,
+    gerant: req.body.gerant,
+    coords: req.body.coords,
+    siret: req.body.siret
   }).save()
     .then(function(user) {
         req.logIn(user, function(err) {
