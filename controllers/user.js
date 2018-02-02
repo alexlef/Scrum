@@ -154,7 +154,11 @@ exports.accountPut = function(req, res, next) {
       name: req.body.name,
       gender: req.body.gender,
       location: req.body.location,
-      website: req.body.website
+      website: req.body.website,
+      forme_juridique: req.body.forme_juridique,
+      gerant: req.body.gerant,
+      coords: req.body.coords,
+      siret: req.body.siret
     };
   }
   user.save(user_changes,{patch:true}).then(function(user) {
