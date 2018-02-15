@@ -59,6 +59,9 @@ app.post('/reset/:token', userController.resetPost);
 app.get('/logout', userController.logout);
 app.get('/unlink/:provider', userController.ensureAuthenticated, userController.unlink);
 
+app.get('/entreprise', HomeController.entreprise);
+
+
 // Production error handler
 if (app.get('env') === 'production') {
   app.use(function(err, req, res, next) {
