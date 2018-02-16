@@ -20,8 +20,12 @@ block content
         div
           h2.text-center=result.attributes.name
           ul.list-group
-            li.list-group-item='Email : '+result.attributes.email
-            li.list-group-item='Forme Juridique : '+result.attributes.forme_juridique
-            li.list-group-item='Gérant : '+result.attributes.gerant
-            li.list-group-item='Coordonnées: '+result.attributes.coords
-            li.list-group-item='Siret : '+result.attributes.siret
+            li.list-group-item='Email : '+ result.attributes.email
+            if result.attributes.forme_juridique
+              li.list-group-item='Forme Juridique : '+ result.attributes.forme_juridique
+            if result.attributes.gerant
+              li.list-group-item='Gérant : '+ result.attributes.gerant
+            if result.attributes.coords
+              li.list-group-item='Coordonnées: '+ result.attributes.coords
+            if result.attributes.siret
+              li.list-group-item='Siret : '+ result.attributes.siret
